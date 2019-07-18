@@ -20,3 +20,16 @@ var config = {
   var destination = "";
   var firstTrainTime = 0;
   var frequency = 0;
+
+
+
+//  Create on click 
+
+$("#submit-info").on("click", function(event){
+    event.preventDefault();
+
+    trainName =$("#train-input")
+
+
+
+})

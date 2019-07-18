@@ -28,8 +28,29 @@ var config = {
 $("#submit-info").on("click", function(event){
     event.preventDefault();
 
-    trainName =$("#train-input")
+    trainName = $("#train-input").val().trim();
+    destination = $("#destination-input").val().trim();
+    firstTrainTime = $("#trainTime-input").val().trim();
+    frequency = $("frequency-input").val().trim();
 
+    dataRef.ref().push({
 
+        trainName: trainName,
+        destination: destination,
+        firstTrainTime: firstTrainTime,
+        frequency: frequency,
+        // ???????????
+        // dateAdded: firebase.database.ServerValue.TIMESTAMP
 
-})
+    });
+
+});
+
+dataRef.ref().on("child_added", function(childSnapshot){
+
+      console.log(childSnapshot.val().trainName);
+      console.log(childSnapshot.val().destination);
+      console.log(childSnapshot.val().firstTrainTime);
+      console.log(childSnapshot.val().frequency);
+
+}

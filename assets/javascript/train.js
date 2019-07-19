@@ -31,7 +31,7 @@ $("#submit-info").on("click", function(event){
     trainName = $("#train-input").val().trim();
     destination = $("#destination-input").val().trim();
     firstTrainTime = $("#trainTime-input").val().trim();
-    frequency = $("frequency-input").val().trim();
+    frequency = $("#frequency-input").val().trim();
 
     dataRef.ref().push({
 
@@ -53,4 +53,4 @@ dataRef.ref().on("child_added", function(childSnapshot){
       console.log(childSnapshot.val().firstTrainTime);
       console.log(childSnapshot.val().frequency);
 
-}
+})
